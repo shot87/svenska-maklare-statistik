@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svenska Mäklarföretag - Ranking 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HITTA MÄKLARE STATISTIK</h1>
+            <h2>Omsättningsrankning 2025</h2>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <p>En omfattande analys av svenska mäklarföretag baserat på omsättning och marknadsposition. 
+            Utforska interaktiva diagram och data för att förstå hur marknaden ser ut.</p>
+            
+            <div class="highlights">
+                <div class="highlight-card">
+                    <i class="fas fa-building"></i>
+                    <h3>12</h3>
+                    <p>Största mäklarföretag</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>~25 miljarder</h3>
+                    <p>Total omsättning</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-home"></i>
+                    <h3>~100 000</h3>
+                    <p>Förmedlade bostäder</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="viz-section">
+            <div class="controls">
+                <h3>Visualiseringar</h3>
+                <div class="toggle-container">
+                    <button class="toggle-btn active" data-chart="revenueChart">Omsättning</button>
+                    <button class="toggle-btn" data-chart="ratingChart">Betyg</button>
+                    <button class="toggle-btn" data-chart="marketShareChart">Marknadsandel</button>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-view active" id="revenueChart">
+                    <h3>Omsättning (Miljoner SEK)</h3>
+                    <canvas id="revenueBarChart"></canvas>
+                </div>
+                <div class="chart-view" id="ratingChart">
+                    <h3>Betyg (1-10)</h3>
+                    <canvas id="ratingRadarChart"></canvas>
+                </div>
+                <div class="chart-view" id="marketShareChart">
+                    <h3>Marknadsandel (baserad på omsättning)</h3>
+                    <canvas id="marketSharePieChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <h3>Detaljerad Tabell</h3>
+            <div class="table-container">
+                <table id="rankingTable">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Företag</th>
+                            <th>Hemsida</th>
+                            <th>Omsättning (MSEK)</th>
+                            <th>Betyg (1-10)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table will be filled by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="methodology">
+            <h3>Metodik</h3>
+            <div class="methodology-toggle">
+                <button class="accordion">Insamling av data</button>
+                <div class="panel">
+                    <p>Omsättningsuppskattningarna baseras på flera faktorer:</p>
+                    <ol>
+                        <li>Känt totalt transaktionsvärde: Under 2024 förmedlade Fastighetsbyrån cirka 40 000 bostäder med ett totalt försäljningsvärde på cirka 104 miljarder SEK.</li>
+                        <li>Uppskattade provisioner: Svenska mäklare tar vanligtvis ut 1,5% till 3% provision på bostadsförsäljningar.</li>
+                        <li>Marknadsandelsdata: Baserat på antal kontor och mäklare enligt Ekonomifokus.se.</li>
+                        <li>Tillgängliga finansiella data för utvalda företag (t.ex. Notar Sverige AB med cirka 179 anställda).</li>
+                    </ol>
+                </div>
+                
+                <button class="accordion">Betygssättning</button>
+                <div class="panel">
+                    <p>Betyget (1-10) baseras främst på företagets omsättning, där det företag med högst omsättning (Fastighetsbyrån) får betyget 10, och övriga betygsätts proportionellt baserat på deras uppskattade omsättning i förhållande till marknadsledaren. Betygssättningen speglar följande skala:</p>
+                    <ul>
+                        <li><strong>10:</strong> Branschledare med dominerande marknadsposition</li>
+                        <li><strong>8-9:</strong> Stor nationell aktör med betydande marknadsandel</li>
+                        <li><strong>6-7:</strong> Etablerat nationellt varumärke med stark regional närvaro</li>
+                        <li><strong>4-5:</strong> Medelstor byrå med måttlig marknadstäckning</li>
+                        <li><strong>1-3:</strong> Mindre aktör med begränsad marknadsandel</li>
+                    </ul>
+                </div>
+                
+                <button class="accordion">Källor</button>
+                <div class="panel">
+                    <ul>
+                        <li>Ekonomifokus.se - Lista över största mäklarföretagen i Sverige (2025)</li>
+                        <li>Företagens webbplatser och tillgängliga årsredovisningar</li>
+                        <li>Offentliga data från Allabolag.se och Bolagsfakta.se (delvis data)</li>
+                        <li>Hittamaklare.se - Toppmäklare efter försäljningsvärde</li>
+                        <li>Fastighetsbyrån officiella data: 40 000 bostäder med försäljningsvärde på 104 miljarder SEK (2024)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="company-profiles">
+            <h3>Företagsprofiler</h3>
+            <div class="profiles-container">
+                <!-- Company profiles will be filled by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Svenska Mäklaranalys | Data uppdaterad Maj 2025 | <a href="https://nunewebs.se" target="_blank">MADE BY NUNEWEBS SEO AND WEBBYRÅ IN STOCKHOLM</a> FOR ALLSERVICE ALEN AB <a href="https://alenallservice.se/flyttstadning" target="_blank"> STÄDFIRMAN I STOCKHOLM</a></p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
